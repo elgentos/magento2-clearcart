@@ -1,0 +1,20 @@
+<?php
+
+declare(strict_types=1);
+
+/** @var Template $block */
+/** @var Escaper $escaper */
+
+use Magento\Framework\Escaper;
+use Magento\Framework\View\Element\Template;
+?>
+
+<a @click.prevent="clearCart"
+   href="<?= $escaper->escapeUrl($block->getUrl('elgentos_clearcart/cart/clear')) ?>"
+   title="<?= $escaper->escapeHtmlAttr(__('Empty cart')) ?>"
+   class="bg-white border border-blue-dark text-blue font-semibold rounded hover:bg-blue-dark hover:text-white transition-all duration-300 uppercase py-2 px-4 no-underline flex items-center justify-center my-4"
+>
+    <?= $escaper->escapeHtml(
+        __('Empty cart')
+    ) ?>
+</a>
